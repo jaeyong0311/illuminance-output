@@ -1,0 +1,18 @@
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int sensorVal = analogRead(39);
+  Serial.println(sensorVal);
+  delay(1000);
+  if (sensorVal <= 1000) {
+    Serial.print("어두워요");
+  } else if (sensorVal <= 2000) {
+    Serial.print("보통이에요");
+  } else if (sensorVal <= 3000) {
+    Serial.print("밝아요");
+  } else{
+    Serial.print("너무 밝아요");
+  }
+}
